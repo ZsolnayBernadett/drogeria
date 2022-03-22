@@ -1,5 +1,7 @@
 @extends( "layouts.master" )
 
+@section("title", "Új tremék")
+
 @section( "content" )
 
 @if( $errors->any() )
@@ -12,20 +14,19 @@
     </ul>
 @endif
 
-<form action="/update-perfume" method="post">
+<form action="add-perfume" method="post">
     @csrf
-    <input type="hidden" name="id" value="{{ $perfume->id }}">
     <p>
         <label for="">Név</label>
-        <input type="text" name="name" value="{{ $perfume->name }}">
+        <input type="text" name="name">
     </p>
     <p>
         <label for="">Típus</label>
-        <input type="text" name="type" value="{{ $perfume->type }}">
+        <input type="text" name="type">
     </p>
     <p>
         <label for="">Ár</label>
-        <input type="text" name="price" value="{{ $perfume->price }}">
+        <input type="text" name="price">
     </p>
     <p>
         <button type="submit">Küldés</button>
